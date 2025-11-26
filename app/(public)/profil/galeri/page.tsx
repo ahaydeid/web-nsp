@@ -1,7 +1,7 @@
-import GalleryHero from "@/app/components/galeri/GalleryHero";
-import PhotoGallery from "@/app/components/galeri/PhotoGallery";
-import ActivitySection from "@/app/components/galeri/ActivitySection";
-import VideoGallery from "@/app/components/galeri/VideoGallery";
+import GalleryHero from "@/app/(public)/components/galeri/GalleryHero";
+import PhotoGallery from "@/app/(public)/components/galeri/PhotoGallery";
+import ActivitySection from "@/app/(public)/components/galeri/ActivitySection";
+import VideoGallery from "@/app/(public)/components/galeri/VideoGallery";
 import { fredoka } from "@/app/fonts";
 
 export default function GaleriPage() {

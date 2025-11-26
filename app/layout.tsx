@@ -1,22 +1,15 @@
-import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import "./globals.css";
-import { poppins } from "./fonts";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
-export const metadata: Metadata = {
-  title: "New Smart People",
-  description: "New Smart People - Official Website",
+export const metadata = {
+  title: "NSP International",
+  description: "Website NSP International",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body className="min-h-screen bg-white text-slate-900">{children}</body>
     </html>
   );
 }

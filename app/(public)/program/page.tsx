@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ProgramCard from "@/app/components/program/ProgramCard";
-import ProgramModal from "@/app/components/program/ProgramModal";
+import ProgramCard from "@/app/(public)/components/program/ProgramCard";
+import ProgramModal from "@/app/(public)/components/program/ProgramModal";
 import { fredoka } from "@/app/fonts";
 
 export interface ProgramItem {

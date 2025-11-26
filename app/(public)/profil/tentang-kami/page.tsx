@@ -1,9 +1,9 @@
-import AboutHero from "@/app/components/profil/AboutHero";
-import HistorySection from "@/app/components/profil/HistorySection";
-import VisionMissionSection from "@/app/components/profil/VisionMissionSection";
-import ValuesCultureSection from "@/app/components/profil/ValuesCultureSection";
-import TeachersSection from "@/app/components/profil/TeachersSection";
-import ExcellenceSection from "@/app/components/profil/ExcellenceSection";
+import AboutHero from "@/app/(public)/components/profil/AboutHero";
+import HistorySection from "@/app/(public)/components/profil/HistorySection";
+import VisionMissionSection from "@/app/(public)/components/profil/VisionMissionSection";
+import ValuesCultureSection from "@/app/(public)/components/profil/ValuesCultureSection";
+import TeachersSection from "@/app/(public)/components/profil/TeachersSection";
+import ExcellenceSection from "@/app/(public)/components/profil/ExcellenceSection";
 
 export default function TentangKamiPage() {
   return (

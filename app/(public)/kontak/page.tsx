@@ -1,8 +1,8 @@
 "use client";
 
-import ContactInfo from "@/app/components/kontak/ContactInfo";
-import MapEmbed from "@/app/components/kontak/MapEmbed";
-import FAQ from "@/app/components/kontak/FAQ";
+import ContactInfo from "@/app/(public)/components/kontak/ContactInfo";
+import MapEmbed from "@/app/(public)/components/kontak/MapEmbed";
+import FAQ from "@/app/(public)/components/kontak/FAQ";
 import { fredoka } from "@/app/fonts";
 
 export default function KontakPage() {

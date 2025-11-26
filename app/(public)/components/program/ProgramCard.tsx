@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ProgramItem } from "@/app/program/page";
+import { ProgramItem } from "@/app/(public)/program/page";
 import { Coins, Timer } from "lucide-react";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 
 export default function ProgramCard({ program, onClick }: Props) {
   return (
-    <div onClick={onClick} className="group border border-gray-100 cursor-pointer rounded-lg bg-white transition-all duration-300 overflow-hidden hover:bg-red-600 hover:shadow-lg relative">
+    <div onClick={onClick} className="group border border-gray-100 cursor-pointer rounded-3xl bg-white transition-all duration-300 overflow-hidden hover:bg-red-600 hover:shadow-lg relative">
       {/* === BLOBS DI DALAM CARD === */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Blob kanan bawah */}

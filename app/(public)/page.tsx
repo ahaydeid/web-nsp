@@ -10,7 +10,9 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-linear-to-b from-pink-50 via-white to-purple-50 text-slate-900">
       <Hero />
-      <ShortProfile />
+      <div suppressHydrationWarning>
+        <ShortProfile />
+      </div>
       <Programs />
       <Testimonials />
       <CTA />

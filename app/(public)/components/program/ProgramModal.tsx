@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ProgramItem } from "@/app/program/page";
+import { ProgramItem } from "@/app/(public)/program/page";
 
 interface Props {
   program: ProgramItem;
