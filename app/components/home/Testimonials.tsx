@@ -43,18 +43,36 @@ const testimonials: readonly Testimonial[] = [
   },
 ];
 
-// 🔥 FIX: supaya jumlahnya SELALU genap, agar tidak ada slide kosong
+// 🔥 FIX: supaya jumlahnya SELALU genap
 const fixedTestimonials = testimonials.length % 2 === 0 ? testimonials : [...testimonials, testimonials[0]];
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
 
+  // ⭐ FIX UTAMA: itemsPerSlide responsif (mobile = 1, desktop = 2)
+  const [itemsPerSlide, setItemsPerSlide] = useState(2);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerSlide(window.innerWidth < 640 ? 1 : 2);
+    };
+
+    handleResize(); // pertama kali
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // hitung total slide berdasarkan itemsPerSlide
+  const totalSlides = Math.ceil(fixedTestimonials.length / itemsPerSlide);
+
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % Math.ceil(fixedTestimonials.length / 2));
+      setIndex((prev) => (prev + 1) % totalSlides);
     }, 6500);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [totalSlides]);
 
   return (
     <section className="py-20 bg-linear-to-b from-white to-red-50/30 relative overflow-hidden">
@@ -70,7 +88,7 @@ export default function Testimonials() {
         <div className="mx-auto mt-1 h-1 w-28 bg-linear-to-r from-red-500 via-yellow-400 to-blue-500 rounded-full" />
         <p className="mt-4 text-slate-600 max-w-xl mx-auto text-sm sm:text-base">Cerita nyata dari alumni NSP — dari TOEFL, komputer, hingga prestasi sekolah dan karier.</p>
 
-        {/* SLIDER GRID 2 */}
+        {/* SLIDER GRID */}
         <div className="relative mt-12 w-full overflow-hidden">
           <div
             className="flex transition-transform duration-900 ease-[cubic-bezier(.45,.15,.15,1)]"
@@ -78,11 +96,9 @@ export default function Testimonials() {
               transform: `translateX(-${index * 100}%)`,
             }}
           >
-            {Array.from({
-              length: Math.ceil(fixedTestimonials.length / 2),
-            }).map((_, groupIndex) => (
+            {Array.from({ length: totalSlides }).map((_, groupIndex) => (
               <div key={groupIndex} className="min-w-full grid grid-cols-1 sm:grid-cols-2 gap-6 px-2 sm:px-4">
-                {fixedTestimonials.slice(groupIndex * 2, groupIndex * 2 + 2).map((t, i) => (
+                {fixedTestimonials.slice(groupIndex * itemsPerSlide, groupIndex * itemsPerSlide + itemsPerSlide).map((t, i) => (
                   <article key={i} className="relative bg-[#ffe6f4] border border-red-300/70 shadow-sm px-8 py-12 text-left min-h-[420px]" style={{ clipPath: "url(#nspTestimonialCard)" }}>
                     <div className="flex items-start gap-4">
                       <div className="relative h-20 w-20 rounded-full bg-white flex items-center justify-center">
@@ -116,9 +132,7 @@ export default function Testimonials() {
 
         {/* DOT NAV */}
         <div className="mt-6 flex justify-center gap-2">
-          {Array.from({
-            length: Math.ceil(fixedTestimonials.length / 2),
-          }).map((_, i) => (
+          {Array.from({ length: totalSlides }).map((_, i) => (
             <button key={i} onClick={() => setIndex(i)} className={`h-2.5 w-2.5 rounded-full transition-all ${i === index ? "bg-red-500 scale-110" : "bg-red-200"}`} aria-label={`Tampilkan testimoni ke-${i + 1}`} />
           ))}
         </div>

@@ -4,8 +4,7 @@ import { fredoka } from "@/app/fonts";
 
 export default function VisionMissionSection() {
   return (
-    <div id="visimisi" className="relative w-full py-24 px-4 mx-auto max-w-full text-slate-800 overflow-hidden z-0">
-      <div className="px-35">
+    <div id="visimisi" className="relative w-full py-24 px-4 max-w-5xl mx-auto text-slate-800 overflow-hidden z-0">
         {/* RANDOM ORGANIC BACKGROUNDS – FIX KONTRAS */}
         <div className="absolute inset-0 pointer-events-none -z-10">
           <svg className="absolute bottom-16 right-1/3 w-48 h-48 text-[#ffff2c] opacity-50" viewBox="0 0 200 200">
@@ -59,7 +58,6 @@ export default function VisionMissionSection() {
             <li>Menanamkan nilai kejujuran, kedisiplinan, dan semangat belajar sepanjang hayat.</li>
           </ul>
         </div>
-      </div>
     </div>
   );
 }
