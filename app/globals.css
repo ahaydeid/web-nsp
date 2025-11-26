@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-outline {
+  text-shadow: -1px -1px 0 #9ca3af, 1px -1px 0 #9ca3af, -1px 1px 0 #9ca3af, 1px 1px 0 #9ca3af;
+}
