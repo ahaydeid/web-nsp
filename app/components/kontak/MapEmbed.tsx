@@ -12,12 +12,8 @@ export default function MapEmbed() {
 
       <h2 className="text-3xl font-bold text-center text-gray-900">Lokasi NSP International</h2>
 
-      <div className="mt-8 shadow-lg rounded-2xl overflow-hidden relative z-10">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.460093314035!2d106.15498057403464!3d-6.200511093788421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e41894957309d41%3A0xf7c6a3cdd0c9c7f9!2sSerang!5e0!3m2!1sen!2sid!4v1710000000000!5m2!1sen!2sid"
-          className="w-full h-80 border-0"
-          loading="lazy"
-        ></iframe>
+      <div className="mt-8 shadow rounded-lg overflow-hidden relative z-10">
+        <iframe src="https://www.google.com/maps?q=-6.106782,106.124673&z=16&output=embed" className="w-full h-120 border-0" loading="lazy"></iframe>
       </div>
     </div>
   );

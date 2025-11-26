@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactInfo() {
   return (
@@ -28,37 +29,36 @@ export default function ContactInfo() {
         />
       </svg>
       {/* ===== END BLOBS ===== */}
-      <div className="border-gray-200 border-2 mt-15 max-w-4xl mx-auto" />
-
-      <h2 className="text-3xl font-bold text-center text-blue-900 pt-20">Informasi Kontak</h2>
 
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* === CARD 1 === */}
-        <div className="group border border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
+        <div className="group border bg-gray-300/20 border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
           <MapPin className="text-gray-900 mb-3 transition-colors group-hover:text-white" />
           <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-white">Alamat</h3>
           <p className="mt-3 text-gray-600 text-sm leading-relaxed transition-colors group-hover:text-white">Jl. Raya Takttakan Perum Pondok Takttakan Indah Blok BE No.14–15, Drangong, Kota Serang, Banten 42162</p>
         </div>
 
         {/* === CARD 2 === */}
-        <div className="group border border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
-          <Phone className="text-gray-900 mb-3 transition-colors group-hover:text-white" />
-          <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-white">Telepon / WhatsApp</h3>
-          <p className="mt-3 text-gray-600 text-sm transition-colors group-hover:text-white">
-            08777 4276 111 <br />
-            0812 8888 3657
-          </p>
-        </div>
+        <Link href="https://wa.me/6281288883657" className="block">
+          <div className="group border bg-gray-300/20 border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
+            <Phone className="text-gray-900 mb-3 transition-colors group-hover:text-white" />
+            <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-white">Telepon / WhatsApp</h3>
+            <p className="mt-3 text-gray-600 text-sm transition-colors group-hover:text-white">
+              08777 4276 111 <br />
+              0812 8888 3657
+            </p>
+          </div>
+        </Link>
 
         {/* === CARD 3 === */}
-        <div className="group border border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
+        <div className="group border bg-gray-300/20 border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
           <Mail className="text-gray-900 mb-3 transition-colors group-hover:text-white" />
           <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-white">Email</h3>
           <p className="mt-3 text-gray-600 text-sm transition-colors group-hover:text-white">admin@nsp-international.com</p>
         </div>
 
         {/* === CARD 4 === */}
-        <div className="group border border-gray-100 hover:bg-red-400 rounded-xl p-8 relative sm:col-span-2 lg:col-span-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
+        <div className="group border bg-gray-300/20 border-gray-100 hover:bg-red-400 rounded-xl p-8 relative sm:col-span-2 lg:col-span-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
           <Clock className="text-gray-900 mb-3 transition-colors group-hover:text-white" />
           <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-white">Jam Operasional</h3>
           <p className="mt-3 text-gray-600 text-sm leading-relaxed transition-colors group-hover:text-white">

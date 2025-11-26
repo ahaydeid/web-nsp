@@ -109,12 +109,12 @@ export default function Hero() {
 
           {/* CTA */}
           <div className="mt-10 flex gap-4">
-            <Link href="#daftar" className="inline-flex items-center gap-2 rounded bg-white px-8 py-3 text-sm font-semibold text-gray-700 hover:text-white hover:bg-gray-700 transition">
+            <Link href="/kontak" className="inline-flex items-center gap-2 rounded bg-white px-8 py-3 text-sm font-semibold text-gray-700 hover:text-white hover:bg-gray-700 transition">
               <MapPin size={18} strokeWidth={2} />
               Lihat Alamat
             </Link>
 
-            <Link href="tel:087774276111" className="inline-flex items-center gap-2 rounded-full bg-green-400 border text-white border-gray-200 px-7 py-3 text-sm font-semibold hover:bg-green-500 transition">
+            <Link href="https://wa.me/6281288883657" className="inline-flex items-center gap-2 rounded-full bg-green-400 border text-white border-gray-200 px-7 py-3 text-sm font-semibold hover:bg-green-500 transition">
               <Phone size={18} strokeWidth={2} />
               Hubungi Kami
             </Link>

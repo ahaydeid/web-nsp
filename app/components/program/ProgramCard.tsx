@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ProgramItem } from "@/app/program/page";
+import { Coins, Timer } from "lucide-react";
 
 interface Props {
   program: ProgramItem;
@@ -42,11 +43,18 @@ export default function ProgramCard({ program, onClick }: Props) {
 
         {/* Info */}
         <div className="mt-4 text-sm text-slate-800 space-y-1 transition-all duration-300 group-hover:text-red-100">
-          <p>
-            <span className="font-semibold group-hover:text-yellow-300">Lama:</span> {program.lama}
+          <p className="flex items-center gap-2">
+            <Timer className="w-4 h-4 text-gray-900 group-hover:text-yellow-300" />
+            <span className="text-blue-900">
+              <span className="font-semibold text-gray-900 group-hover:text-yellow-300">Lama:</span> {program.lama}
+            </span>
           </p>
-          <p>
-            <span className="font-semibold group-hover:text-yellow-300">Biaya:</span> {program.biaya}
+
+          <p className="flex items-center gap-2">
+            <Coins className="w-4 h-4 text-gray-900 group-hover:text-yellow-300" />
+            <span className="text-blue-900">
+              <span className="font-semibold text-gray-900 group-hover:text-yellow-300">Biaya:</span> {program.biaya}
+            </span>
           </p>
         </div>
       </div>
