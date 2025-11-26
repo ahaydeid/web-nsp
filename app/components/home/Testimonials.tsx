@@ -122,7 +122,7 @@ export default function Testimonials() {
                     </div>
 
                     <div className="mt-6 h-px w-full bg-red-300/70" />
-                    <p className="mt-6 text-base leading-relaxed text-[#e01976]">{t.text}</p>
+                    <p className={`${fredoka.className} mt-6 text-base leading-relaxed text-[#e01976]`}>“{t.text}”</p>
                   </article>
                 ))}
               </div>
