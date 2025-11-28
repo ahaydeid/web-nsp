@@ -2,6 +2,11 @@ import type { ReactNode } from "react";
 import Sidebar from "./components/Sidebar";
 import "../../globals.css";
 
+export const metadata = {
+  title: "Admin -   New Smart People",
+  description: "New Smart People - Official Website",
+};
+
 export default function PanelLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen bg-gray-50">
