@@ -35,10 +35,10 @@ export default function ContactInfo() {
         <div className="group border bg-gray-300/20 border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
           <MapPin className="text-gray-900 mb-3 transition-colors group-hover:text-white" />
           <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-white">Alamat</h3>
-          <p className="mt-3 text-gray-600 text-sm leading-relaxed transition-colors group-hover:text-white">Jl. Raya Takttakan Perum Pondok Takttakan Indah Blok BE No.14–15, Drangong, Kota Serang, Banten 42162</p>
+          <p className="mt-3 text-gray-600 text-sm leading-relaxed transition-colors group-hover:text-white">Jl. Raya Taktakan Perum Pondok Taktakan Indah Blok BE No.14–15, Drangong, Kota Serang, Banten 42162</p>
         </div>
 
-        {/* === CARD 2 === */}
+        {/* === CARD 2 === */}  
         <Link href="https://wa.me/6281288883657" className="block">
           <div className="group border bg-gray-300/20 border-gray-100 hover:bg-red-400 rounded-xl p-8 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:z-20">
             <Phone className="text-gray-900 mb-3 transition-colors group-hover:text-white" />

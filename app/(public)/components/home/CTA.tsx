@@ -35,7 +35,7 @@ export default function CTA() {
           <div className="rounded border border-gray-200 bg-gray-50 p-6 hover:shadow">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-700">Kontak & Alamat NSP</h3>
 
-            <p className="mt-3 text-sm leading-relaxed text-gray-700">Jl. Raya Takttakan Perum Pondok Takttakan Indah Blok BE No.14–15, Drangong, Kota Serang, Banten 42162</p>
+            <p className="mt-3 text-sm leading-relaxed text-gray-700">Jl. Raya Taktakan Perum Pondok Taktakan Indah Blok BE No.14–15, Drangong, Kota Serang, Banten 42162</p>
 
             <dl className="mt-4 space-y-3 text-sm text-gray-800">
               <div className="flex flex-col gap-1 sm:flex-row sm:gap-3">
