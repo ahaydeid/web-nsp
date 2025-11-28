@@ -5,6 +5,12 @@ import ValuesCultureSection from "@/app/(public)/components/profil/ValuesCulture
 import TeachersSection from "@/app/(public)/components/profil/TeachersSection";
 import ExcellenceSection from "@/app/(public)/components/profil/ExcellenceSection";
 
+export const metadata = {
+  title: "Tentang NSP International Serang",
+  description: "Profil resmi NSP International Kota Serang — visi misi, sejarah, dan keunggulan lembaga kursus.",
+  alternates: { canonical: "/profil/tentang-kami" },
+};
+
 export default function TentangKamiPage() {
   return (
     <main className="w-full flex flex-col">

@@ -5,8 +5,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "New Smart People",
-  description: "New Smart People - Official Website",
+  title: {
+    default: "New Smart People",
+    template: "%s | NSP International",
+  },
+  description: "Website resmi NSP International Kota Serang — kursus bahasa Inggris, komputer, bimbel, dan persiapan ujian terbaik.",
+  keywords: ["Kursus Serang", "Les Serang", "Kursus Bahasa Serang", "Kursus Komputer Serang", "Bimbel Serang", "New Smart People Serang"],
 };
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {

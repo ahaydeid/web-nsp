@@ -4,6 +4,12 @@ import ActivitySection from "@/app/(public)/components/galeri/ActivitySection";
 import VideoGallery from "@/app/(public)/components/galeri/VideoGallery";
 import { fredoka } from "@/app/fonts";
 
+export const metadata = {
+  title: "Galeri Foto & Video NSP Serang",
+  description: "Dokumentasi kegiatan belajar, fasilitas, event, dan aktivitas siswa di NSP International Serang.",
+  alternates: { canonical: "/profil/galeri" },
+};
+
 export default function GaleriPage() {
   return (
     <main className="w-full flex flex-col">
