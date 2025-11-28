@@ -8,7 +8,6 @@ import { ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [openProfile, setOpenProfile] = useState(false);
-  const [openKontak, setOpenKontak] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const pathname = usePathname();
 
@@ -94,20 +93,9 @@ export default function Navbar() {
 
           {/* Mobile Kontak */}
           <div className="mt-2">
-            <button onClick={() => setOpenKontak(!openKontak)} className={`${fredoka.className} w-full text-left py-2 text-gray-700`}>
-              Kontak ▾
-            </button>
-
-            {openKontak && (
-              <div className="ml-3 border-l border-gray-200">
-                <Link href="/kontak" className={`${fredoka.className} block py-2 pl-3 text-gray-600`}>
-                  Kontak
-                </Link>
-                <Link href="/faq" className={`${fredoka.className} block py-2 pl-3 text-gray-600`}>
-                  FAQ
-                </Link>
-              </div>
-            )}
+            <Link href="/kontak" className={`${fredoka.className} block w-full text-left py-2 text-gray-700`}>
+              Kontak
+            </Link>
           </div>
         </div>
       )}
