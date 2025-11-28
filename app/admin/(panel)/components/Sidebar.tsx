@@ -19,11 +19,11 @@ export default function Sidebar() {
   return (
     <aside
       className={`sticky top-0 h-screen bg-white shadow-sm transition-all duration-300 
-      ${collapsed ? "w-20" : "w-64"} flex flex-col`}
+      ${collapsed ? "w-20" : "w-54"} flex flex-col`}
     >
       {/* HEADER */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200">
-        {!collapsed && <h2 className="text-lg font-bold text-red-600">NSP Admin</h2>}
+        {!collapsed && <h2 className="text-lg font-bold text-blue-900">NSP Admin</h2>}
         <button onClick={() => setCollapsed((prev) => !prev)} className="p-1 rounded hover:bg-gray-100" aria-label="Toggle sidebar">
           {collapsed ? <Menu size={22} /> : <X size={22} />}
         </button>
@@ -65,7 +65,7 @@ function SidebarItem({ href, icon, label, collapsed, active }: SidebarItemProps)
   return (
     <Link
       href={href}
-      className={`flex items-center gap-3 px-4 py-2 transition
+      className={`flex items-center gap-3 p-4 py-2 transition
         ${active ? "bg-red-500 text-white font-semibold" : "text-gray-700 hover:bg-gray-100"}
       `}
     >
