@@ -52,8 +52,8 @@ export default function ShortProfile() {
             </div>
 
             <p className={`${fredoka.className} text-slate-700 leading-relaxed text-[1.05rem]`}>
-              NSP berdiri sejak <span className="text-red-600 font-semibold">10 Desember 2000</span>
-              dan hingga kini telah meluluskan lebih dari
+              NSP berdiri sejak <span className="text-red-600 font-semibold">10 Desember 2010</span>
+              {" "}dan hingga kini telah meluluskan lebih dari
               <span className="text-red-600 font-semibold"> 25.000 alumni</span>. Selama lebih dari dua dekade, NSP terus berkembang menjadi salah satu lembaga kursus terpercaya yang dikenal karena pendekatannya yang ramah, profesional, dan
               mampu menjawab kebutuhan belajar masyarakat Indonesia di berbagai daerah, baik dalam bidang Bahasa Inggris maupun Komputer.
             </p>

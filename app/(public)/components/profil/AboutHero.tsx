@@ -29,9 +29,9 @@ export default function AboutHero() {
           </span>
         </h1>
 
-        <p className="mt-5 text-lg text-slate-600 max-w-xl mx-auto">Lembaga kursus terlengkap dan terakreditasi A di Kota Serang.</p>
+        <p className="mt-5 text-lg text-slate-600 max-w-xl mx-auto">Lembaga kursus terlengkap dan terakreditasi <span className="text-red-500 font-bold text-xl">A</span> di Kota Serang.</p>
 
-        <p className="mt-4 text-base text-slate-600 max-w-xl mx-auto leading-relaxed">NSP (New Smart People) telah membantu puluhan ribu peserta meningkatkan kompetensi bahasa, komputer, dan keterampilan akademik sejak tahun 2000.</p>
+        <p className="mt-4 text-base text-slate-600 max-w-xl mx-auto leading-relaxed">NSP (New Smart People) telah membantu puluhan ribu peserta meningkatkan kompetensi bahasa, komputer, dan keterampilan akademik sejak tahun 2010.</p>
 
         {/* BLOB HIGHLIGHTS */}
         <div className="mt-10 flex flex-wrap justify-center gap-12">
