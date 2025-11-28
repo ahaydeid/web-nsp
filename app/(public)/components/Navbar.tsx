@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { fredoka } from "@/app/fonts";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [openProfile, setOpenProfile] = useState(false);
@@ -76,21 +76,16 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {mobileMenu && (
-        <div
-          className={`
-            lg:hidden fixed inset-x-0 top-full z-50 border-t border-gray-200 bg-white px-4 pb-4
-            transition-all duration-300 transform
-            ${animateMenu ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}
-          `}
-        >
+        <div className={`lg:hidden fixed inset-x-0 top-full z-50 border-t border-gray-200 bg-white px-4 pb-4 transition-all duration-300 transform ${animateMenu ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}>
           <Link href="/" className={`${fredoka.className} block py-2 text-gray-700`}>
             Beranda
           </Link>
 
           {/* Mobile Profile */}
           <div className="mt-2">
-            <button onClick={() => setOpenProfile(!openProfile)} className={`${fredoka.className} w-full flex items-center text-left py-2 text-gray-700`}>
-              Profile <ChevronDown className="w-5 h-5" />
+            <button onClick={() => setOpenProfile(!openProfile)} className={`${fredoka.className} w-full flex items-center justify-between text-left py-2 text-gray-700`}>
+              <span>Profile</span>
+              {openProfile ? <ChevronDown className="w-5 h-5 transform transition-transform duration-300" /> : <ChevronRight className="w-5 h-5 transform transition-transform duration-300" />}
             </button>
 
             {openProfile && (
