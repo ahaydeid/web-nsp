@@ -31,7 +31,7 @@ export default function ShortProfile() {
                   clipPath: "url(#nspClip)",
                 }}
               >
-                <Image src="/img/imgplaceholder.png" alt="Suasana belajar NSP" fill className="object-cover" />
+                <Image src="/img/gedung-nsp.png" alt="Suasana belajar NSP" fill className="object-cover" />
               </div>
 
               <div className="pointer-events-none absolute -bottom-8 left-1/2 w-3/4 -translate-x-1/2 rounded-full bg-red-200/40 blur-2xl" />

@@ -35,13 +35,13 @@ export default function AboutHero() {
 
         {/* BLOB HIGHLIGHTS */}
         <div className="mt-10 flex flex-wrap justify-center gap-12">
-          <BlobItem icon={<Calendar className="w-8 h-8 text-[#ff0048]" />} label="Berdiri Sejak" value="10 Desember 2010" />
+          <BlobItem icon={<Calendar className="w-8 h-8 text-blue-800" />} label="Berdiri Sejak" value="10 Desember 2010" />
 
-          <BlobItem icon={<Users className="w-8 h-8 text-[#ff0048]" />} label="Alumni" value="25.000+" />
+          <BlobItem icon={<Users className="w-8 h-8 text-blue-800" />} label="Alumni" value="25.000+" />
 
-          <BlobItem icon={<Medal className="w-8 h-8 text-[#ff0048]" />} label="Akreditasi" value="A" />
+          <BlobItem icon={<Medal className="w-8 h-8 text-blue-800" />} label="Akreditasi" value="A" />
 
-          <BlobItem icon={<ThumbsUp className="w-8 h-8 text-[#ff0048]" />} label="Predikat" value="Lembaga Terfavorit" />
+          <BlobItem icon={<ThumbsUp className="w-8 h-8 text-blue-800" />} label="Predikat" value="Lembaga Terfavorit" />
         </div>
 
         {/* CTA */}
@@ -77,8 +77,8 @@ function BlobItem({ icon, label, value }: BlobItemProps) {
 
       <div className="relative z-10 flex flex-col items-center">
         {icon}
-        <p className="text-xs text-slate-600 mt-1">{label}</p>
-        <p className={`${fredoka.className} text-sm font-medium text-slate-800 mt-0.5`}>{value}</p>
+        <p className="text-xs text-blue-800 mt-1">{label}</p>
+        <p className={`${fredoka.className} text-sm font-medium text-blue-800 mt-0.5`}>{value}</p>
       </div>
     </div>
   );

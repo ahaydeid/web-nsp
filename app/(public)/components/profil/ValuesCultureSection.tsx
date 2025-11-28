@@ -47,7 +47,7 @@ export default function ValuesCultureSection() {
   return (
     <div className="relative w-full py-24 px-4 mx-auto max-w-6xl text-slate-800 overflow-visible z-0">
 
-      <h2 className={`${fredoka.className} relative text-4xl sm:text-5xl font-semibold text-center text-gray-900 block`}>
+      <h2 className={`${fredoka.className} relative text-4xl sm:text-5xl font-semibold text-center text-blue-900 block`}>
         Nilai & Budaya NSP
         <svg className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-44 h-3 text-[#FFC1DA]" viewBox="0 0 200 20">
           <path fill="currentColor" d="M10,10 Q60,2 110,10 T190,10 Q160,18 110,10 T10,10Z" />
