@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, MessageSquareQuote, BookOpen, Image as ImageIcon, Users, Layers, Star, HelpCircle, LogOut } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, MessageSquareQuote, BookOpen, Image as ImageIcon, Users, Layers, HelpCircle, LogOut } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
+  const pathname = usePathname();
   const supabase = createClient();
 
   async function handleLogout() {
@@ -29,13 +31,17 @@ export default function Sidebar() {
 
       {/* MENU */}
       <nav className="flex-1 overflow-y-auto py-4">
-        <SidebarItem collapsed={collapsed} href="/admin" icon={<Star size={20} />} label="Dashboard" />
-        <SidebarItem collapsed={collapsed} href="/admin/testimonials" icon={<MessageSquareQuote size={20} />} label="Testimoni" />
-        <SidebarItem collapsed={collapsed} href="/admin/programs" icon={<BookOpen size={20} />} label="Program" />
-        <SidebarItem collapsed={collapsed} href="/admin/gallery" icon={<ImageIcon size={20} />} label="Galeri" />
-        <SidebarItem collapsed={collapsed} href="/admin/teachers" icon={<Users size={20} />} label="Tim Pengajar" />
-        <SidebarItem collapsed={collapsed} href="/admin/visi-misi" icon={<Layers size={20} />} label="Visi & Misi" />
-        <SidebarItem collapsed={collapsed} href="/admin/faq" icon={<HelpCircle size={20} />} label="FAQ" />
+        <SidebarItem collapsed={collapsed} href="/admin/testimonials" icon={<MessageSquareQuote size={20} />} label="Testimoni" active={pathname.startsWith("/admin/testimonials")} />
+
+        <SidebarItem collapsed={collapsed} href="/admin/visi-misi" icon={<Layers size={20} />} label="Visi & Misi" active={pathname.startsWith("/admin/visi-misi")} />
+
+        <SidebarItem collapsed={collapsed} href="/admin/teachers" icon={<Users size={20} />} label="Tim Pengajar" active={pathname.startsWith("/admin/teachers")} />
+
+        <SidebarItem collapsed={collapsed} href="/admin/gallery" icon={<ImageIcon size={20} />} label="Galeri" active={pathname.startsWith("/admin/gallery")} />
+
+        <SidebarItem collapsed={collapsed} href="/admin/programs" icon={<BookOpen size={20} />} label="Program" active={pathname.startsWith("/admin/programs")} />
+
+        <SidebarItem collapsed={collapsed} href="/admin/faq" icon={<HelpCircle size={20} />} label="FAQ" active={pathname.startsWith("/admin/faq")} />
       </nav>
 
       {/* LOGOUT */}
@@ -52,11 +58,17 @@ interface SidebarItemProps {
   icon: React.ReactNode;
   label: string;
   collapsed: boolean;
+  active: boolean;
 }
 
-function SidebarItem({ href, icon, label, collapsed }: SidebarItemProps) {
+function SidebarItem({ href, icon, label, collapsed, active }: SidebarItemProps) {
   return (
-    <Link href={href} className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-100 transition">
+    <Link
+      href={href}
+      className={`flex items-center gap-3 px-4 py-2 transition
+        ${active ? "bg-red-500 text-white font-semibold" : "text-gray-700 hover:bg-gray-100"}
+      `}
+    >
       {icon}
       {!collapsed && <span>{label}</span>}
     </Link>

@@ -4,6 +4,7 @@ import { createServerClient } from "@supabase/ssr";
 export async function proxy(request: NextRequest) {
   const response = NextResponse.next();
 
+  // Supabase SSR auth
   const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     cookies: {
       get: (name) => request.cookies.get(name)?.value,
@@ -18,14 +19,17 @@ export async function proxy(request: NextRequest) {
 
   const path = request.nextUrl.pathname;
 
-  // Biarkan halaman login lewat
-  if (path.startsWith("/admin/login")) return response;
+  // Izinkan halaman login
+  if (path === "/admin/login" || path.startsWith("/admin/login/")) {
+    return response;
+  }
 
-  // Autentikasi untuk semua halaman admin kecuali login
+  // PROTECT ADMIN PANEL
+  // Semua path yang berada dalam admin/(panel) ada di URL sebagai /admin/*
+  // jadi kita cukup cek: jika path dimulai /admin dan bukan login
   if (path.startsWith("/admin")) {
     const { data } = await supabase.auth.getUser();
 
-    // Tidak ada user -> redirect ke login
     if (!data.user) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
     }
