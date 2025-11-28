@@ -97,7 +97,9 @@ export default function TeachersPage() {
                 <tr key={t.id} className={`${i % 2 === 0 ? "bg-white" : "bg-slate-50/40"} hover:bg-slate-100/70`}>
                   <td className="px-4 py-3">{i + 1}</td>
 
-                  <td className="px-4 py-3">{t.photo ? <Image src={t.photo} alt={t.name} width={40} height={40} className="w-10 h-10 rounded-full object-cover" /> : <div className="w-10 h-10 rounded-full bg-slate-200" />}</td>
+                  <td className="px-4 py-3">
+                    <Image src={t.photo?.trim() ? t.photo : "/img/profil-placeholder.png"} alt={t.name} width={40} height={40} className="w-10 h-10 rounded-full object-cover" />
+                  </td>
 
                   <td className="px-4 py-3 text-slate-800">{t.name}</td>
                   <td className="px-4 py-3 text-slate-600">{t.title}</td>

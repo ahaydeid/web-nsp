@@ -58,7 +58,12 @@ export default function PhotoGallery() {
             photos.map((photo) => (
               <figure key={photo.id} className="group relative overflow-hidden rounded-2xl bg-slate-100/60 shadow-sm hover:shadow-lg transition-shadow">
                 <div className="relative w-full pt-[70%]">
-                  <Image src={photo.src ?? "/img/imgplaceholder.png"} alt={photo.alt ?? ""} fill className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                  <Image
+                    src={photo.src && photo.src.trim() !== "" ? photo.src : "/img/imgplaceholder.png"}
+                    alt={photo.alt ?? ""}
+                    fill
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  />
                 </div>
 
                 <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-black/55 via-black/15 to-transparent px-4 pb-3 pt-8 text-xs sm:text-sm text-white">

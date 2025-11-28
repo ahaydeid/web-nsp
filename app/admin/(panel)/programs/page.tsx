@@ -101,7 +101,9 @@ export default function ProgramsPage() {
                 <tr key={p.id} className={`${i % 2 === 0 ? "bg-white" : "bg-slate-50/40"} hover:bg-slate-100/70`}>
                   <td className="px-4 py-3">{i + 1}</td>
 
-                  <td className="px-4 py-3">{p.gambar ? <Image src={p.gambar} alt={p.judul} width={60} height={60} className="w-14 h-14 object-cover rounded" /> : <div className="w-14 h-14 bg-slate-200 rounded" />}</td>
+                  <td className="px-4 py-3">
+                    <Image src={p.gambar?.trim() ? p.gambar : "/img/imgplaceholder.png"} alt={p.judul} width={60} height={60} className="w-14 h-14 object-cover rounded" />
+                  </td>
 
                   <td className="px-4 py-3 text-slate-800">{p.judul}</td>
                   <td className="px-4 py-3 text-slate-600">{p.kategori}</td>

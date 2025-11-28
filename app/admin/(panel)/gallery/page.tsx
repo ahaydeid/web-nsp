@@ -114,11 +114,15 @@ export default function GalleryPage() {
 
                   <td className="px-4 py-3">
                     {g.type === "photo" ? (
-                      <Image src={g.src} alt={g.alt ?? ""} width={60} height={60} className="w-14 h-14 object-cover rounded" />
+                      <Image src={g.src?.trim() ? g.src : "/img/imgplaceholder.png"} alt={g.alt ?? ""} width={60} height={60} className="w-14 h-14 object-cover rounded" />
                     ) : (
                       (() => {
                         const thumb = getYouTubeThumbnail(g.src);
-                        return thumb ? <Image src={thumb} alt={g.alt ?? "Video"} width={80} height={60} className="w-20 h-14 object-cover rounded" /> : <span className="text-xs text-slate-500">Invalid Video URL</span>;
+                        return thumb ? (
+                          <Image src={thumb} alt={g.alt ?? "Video"} width={80} height={60} className="w-20 h-14 object-cover rounded" />
+                        ) : (
+                          <Image src="/img/imgplaceholder.png" alt="Video placeholder" width={80} height={60} className="w-20 h-14 object-cover rounded" />
+                        );
                       })()
                     )}
                   </td>

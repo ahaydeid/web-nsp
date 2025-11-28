@@ -25,7 +25,7 @@ export default function ProgramCard({ program, onClick }: Props) {
 
       {/* IMAGE */}
       <div className="relative w-full h-40 overflow-hidden">
-        <Image src={program.gambar ?? "/img/imgplaceholder.png"} alt={program.judul} fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75" />
+        <Image src={program.gambar?.trim() ? program.gambar : "/img/imgplaceholder.png"} alt={program.judul} fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75" />
       </div>
 
       {/* CONTENT */}
