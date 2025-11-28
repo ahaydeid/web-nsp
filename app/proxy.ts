@@ -1,37 +1,31 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { createServerClient, type CookieOptions } from "@supabase/ssr";
+import { createServerClient } from "@supabase/ssr";
 
 export async function proxy(request: NextRequest) {
   const response = NextResponse.next();
 
   const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     cookies: {
-      get: (name: string) => {
-        return request.cookies.get(name)?.value;
+      get: (name) => request.cookies.get(name)?.value,
+      set: (name, value, options) => {
+        response.cookies.set({ name, value, ...options });
       },
-      set: (name: string, value: string, options: CookieOptions) => {
-        response.cookies.set({
-          name,
-          value,
-          ...options,
-        });
-      },
-      remove: (name: string, options: CookieOptions) => {
-        response.cookies.set({
-          name,
-          value: "",
-          ...options,
-        });
+      remove: (name, options) => {
+        response.cookies.set({ name, value: "", ...options });
       },
     },
   });
-  const isAdminRoute = request.nextUrl.pathname.startsWith("/admin");
-  const isLoginPage = request.nextUrl.pathname === "/admin/login";
 
-  if (isAdminRoute && !isLoginPage) {
+  const path = request.nextUrl.pathname;
+
+  // Biarkan halaman login lewat
+  if (path.startsWith("/admin/login")) return response;
+
+  // Autentikasi untuk semua halaman admin kecuali login
+  if (path.startsWith("/admin")) {
     const { data } = await supabase.auth.getUser();
 
-    // jika tidak ada user
+    // Tidak ada user -> redirect ke login
     if (!data.user) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
     }
