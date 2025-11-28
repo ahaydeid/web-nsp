@@ -60,7 +60,7 @@ export default function VideoGallery() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <h2 id="video-heading" className={`${fredoka.className} text-2xl sm:text-3xl font-bold text-slate-900`}>
-            Galeri Video / Testimoni YouTube
+            Galeri Video / YouTube
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">Beberapa testimoni alumni, cuplikan kegiatan belajar, dan dokumentasi event NSP dalam bentuk video.</p>
         </div>
